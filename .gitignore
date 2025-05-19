@@ -1,0 +1,26 @@
+# Ignore Terraform state and cache files
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+
+# Ignore environment files
+*.env
+
+# Ignore sensitive or large binaries
+*.exe
+*.zip
+
+# Ignore Python cache
+__pycache__/
+*.pyc
+
+# Ignore Docker stuff
+*.log
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+.terraform/
+

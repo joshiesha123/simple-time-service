@@ -21,10 +21,12 @@ This project is designed for containerized deployment and follows best practices
 
 ```
 simple-time-service/  
-├── app.py # Main application file  
-├── Dockerfile # Docker build configuration  
-├── README.md # This documentation  
-└── .gitattributes # Git configuration file  
+├── app/               
+│   ├── app.py         # Main application file  
+│   └── Dockerfile     # Docker build configuration  
+├── README.md          # This documentation  
+└── .gitattributes     # Git configuration file  
+ 
 
 ```
 
@@ -50,7 +52,8 @@ cd simple-time-service
 
 2. Build the Docker Image
 
-docker build -t esha2208/simple-time-service .
+docker build -t esha2208/simple-time-service ./app
+
 This builds the container image tagged as esha2208/simple-time-service.
 
 3. Run the Docker Container
