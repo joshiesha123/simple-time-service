@@ -21,11 +21,23 @@ This project is designed for containerized deployment and follows best practices
 
 ```
 simple-time-service/  
-├── app/               
-│   ├── app.py         # Main application file  
-│   └── Dockerfile     # Docker build configuration  
-├── README.md          # This documentation  
-└── .gitattributes     # Git configuration file  
+├── app/                
+│   ├── app.py           # Main application file  
+│   └── Dockerfile       # Docker build configuration  
+├── terraform/           # Terraform code for AWS infrastructure  
+│   ├── main.tf          
+│   ├── variables.tf     
+│   ├── terraform.tfvars 
+│   ├── outputs.tf       
+│   ├── versions.tf      
+│   └── data.tf           
+├── .github/             # GitHub Actions workflows  
+│   └── workflows/       
+│       └── docker-ecr.yml    # CI/CD pipeline configuration  
+├── README.md            # This documentation  
+├── .gitattributes       # Git configuration file  
+└── .gitignore           # Specifies intentionally untracked files to ignore  
+
  
 
 ```
