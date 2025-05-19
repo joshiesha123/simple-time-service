@@ -79,3 +79,67 @@ docker pull esha2208/simple-time-service:latest
 
 
 
+☁️ Infrastructure Deployment with Terraform
+
+This section contains instructions for deploying the Simple Time Service on AWS using ECS Fargate and Terraform.
+
+📁 Terraform Project Structure
+
+terraform/
+├── main.tf                # Core infrastructure definition
+├── variables.tf           # Input variable definitions
+├── terraform.tfvars       # Default values for variables
+├── outputs.tf             # Output values for inspection
+├── versions.tf            # Provider and Terraform version constraints
+├── data.tf            
+
+🔐 AWS Authentication
+You must configure AWS credentials before running Terraform. You can do so via:
+
+Environment variables:
+
+export AWS_ACCESS_KEY_ID="your-access-key-id"
+export AWS_SECRET_ACCESS_KEY="your-secret-access-key"
+
+
+🚀 Deploying the Infrastructure
+
+Navigate to the terraform folder:
+
+cd terraform
+
+Initialize Terraform:
+
+terraform init
+
+Preview the infrastructure:
+
+terraform plan
+
+Apply the changes:
+
+terraform apply
+This will:
+
+✅ Create a new VPC with public and private subnets
+✅ Deploy an ECS cluster with Fargate launch type
+✅ Run your Docker container on private subnets
+✅ Set up an Application Load Balancer (ALB) in public subnets
+✅ Automatically pull the Docker image from DockerHub
+✅ Expose your service via the ALB DNS name
+
+⚙️ Step 2: Deploy Application Using GitHub Actions
+
+This project includes a CI/CD pipeline powered by GitHub Actions. The workflow:
+
+Triggers on every push to the main branch
+
+Builds and pushes your Docker image to Docker Hub
+
+Automatically updates the ECS service to use the latest image
+
+📌 Note: Make sure the Terraform infrastructure (Step 1) is successfully deployed before triggering the GitHub Actions workflow. The ECS cluster, ALB, and related resources must already exist for the deployment to succeed.
+
+
+🧑‍💻 Maintainer
+Created by Esha — feel free to fork or open issues!
